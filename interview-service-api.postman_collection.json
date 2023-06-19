@@ -1,0 +1,232 @@
+{
+	"info": {
+		"_postman_id": "8cdee2f8-7fba-4eeb-9319-294a023c808b",
+		"name": "interview-service-api",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+		"_exporter_id": "706245"
+	},
+	"item": [
+		{
+			"name": "Interview List",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "localhost:6868/api/interviews?limit=1&page=1",
+					"host": [
+						"localhost"
+					],
+					"port": "6868",
+					"path": [
+						"api",
+						"interviews"
+					],
+					"query": [
+						{
+							"key": "limit",
+							"value": "1"
+						},
+						{
+							"key": "page",
+							"value": "1"
+						}
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Interview Detail",
+			"protocolProfileBehavior": {
+				"disableBodyPruning": true
+			},
+			"request": {
+				"method": "GET",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"title\":\"นัดสัมภาษณ์งาน\",\r\n    \"description\":\"Lorem ipsum dolor sit amet, consectetur adipiscing elit. Fusce faucibus luctus risus, eu posuere massa congue quis. Interdum et malesuada fames ac ante ipsum primis in faucibus. Vestibulum elementum sapien eu ultricies consequat. Phasellus ut mollis elit, ac pulvinar ligula. Morbi ultrices elit lacus, sed volutpat mauris condimentum nec. Vivamus sed porta purus, sed facilisis nunc. Proin euismod libero suscipit erat lacinia iaculis. In fringilla laoreet facilisis. Curabitur vestibulum arcu quis malesuada mollis. Fusce consequat nulla eros, vitae viverra mauris vehicula in. Integer semper auctor neque. Morbi consectetur ultrices est sit amet bibendum. Nulla facilisi. Nullam id enim sagittis sem placerat cursus aliquet sed felis.\"\r\n\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "localhost:6868/api/interviews/648f2114ebefa700143e12f3",
+					"host": [
+						"localhost"
+					],
+					"port": "6868",
+					"path": [
+						"api",
+						"interviews",
+						"648f2114ebefa700143e12f3"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Add Interview",
+			"request": {
+				"method": "POST",
+				"header": [
+					{
+						"key": "x-username",
+						"value": "Batman",
+						"type": "text"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"title\":\"นัดสัมภาษณ์งาน 2\",\r\n    \"description\":\"Lorem ipsum dolor sit amet, consectetur adipiscing elit. Fusce faucibus luctus risus, eu posuere massa congue quis. Interdum et malesuada fames ac ante ipsum primis in faucibus. Vestibulum elementum sapien eu ultricies consequat. Phasellus ut mollis elit, ac pulvinar ligula. Morbi ultrices elit lacus, sed volutpat mauris condimentum nec. Vivamus sed porta purus, sed facilisis nunc. Proin euismod libero suscipit erat lacinia iaculis. In fringilla laoreet facilisis. Curabitur vestibulum arcu quis malesuada mollis. Fusce consequat nulla eros, vitae viverra mauris vehicula in. Integer semper auctor neque. Morbi consectetur ultrices est sit amet bibendum. Nulla facilisi. Nullam id enim sagittis sem placerat cursus aliquet sed felis.\"\r\n\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "localhost:6868/api/interviews",
+					"host": [
+						"localhost"
+					],
+					"port": "6868",
+					"path": [
+						"api",
+						"interviews"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Update Interview Status",
+			"request": {
+				"method": "PATCH",
+				"header": [
+					{
+						"key": "x-username",
+						"value": "Batman",
+						"type": "text"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"status\":\"In Progress\"\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "localhost:6868/api/interviews/6490616ce41a0f00145c2a02/status",
+					"host": [
+						"localhost"
+					],
+					"port": "6868",
+					"path": [
+						"api",
+						"interviews",
+						"6490616ce41a0f00145c2a02",
+						"status"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Add Interview Comment",
+			"request": {
+				"method": "POST",
+				"header": [
+					{
+						"key": "x-username",
+						"value": "Batman",
+						"type": "text"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"comment\":\"Lorem ipsum dolor sit\",\r\n    \"created_by\":\"Tester\"\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "localhost:6868/api/interviews/6490616ce41a0f00145c2a02/comment",
+					"host": [
+						"localhost"
+					],
+					"port": "6868",
+					"path": [
+						"api",
+						"interviews",
+						"6490616ce41a0f00145c2a02",
+						"comment"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Remove Interview",
+			"request": {
+				"method": "DELETE",
+				"header": [
+					{
+						"key": "x-username",
+						"value": "Batman",
+						"type": "text"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"status\":\"In Progress\"\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "localhost:6868/api/interviews/648f289c9bfa05001481b5bb",
+					"host": [
+						"localhost"
+					],
+					"port": "6868",
+					"path": [
+						"api",
+						"interviews",
+						"648f289c9bfa05001481b5bb"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Dropdown Status",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "localhost:6868/api/dropdowns/status",
+					"host": [
+						"localhost"
+					],
+					"port": "6868",
+					"path": [
+						"api",
+						"dropdowns",
+						"status"
+					]
+				}
+			},
+			"response": []
+		}
+	]
+}
